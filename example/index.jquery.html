@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Placeholder Shiv</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="../javascripts/placeholder-shiv-jquery.js" type="text/javascript" charset="utf-8"></script>
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="PageDiv">
+	  <h1 id="placeholder_shiv">Placeholder Shiv</h1>
+	  <p>This jQuery JavaScript simulates the <code>placeholder</code> attribute in browsers that do not support it yet. It doesn’t do anying if placeholders are supported, and degrades to show nothing if both placeholder and JavaScript support are missing.</p>
+	  <p>To apply it, simply code your form elements with placeholders, and add a link to prototype.js and placeholder-shiv.js in the head of your page.</p>
+	  <p>The only caution is that the placeholder text cannot be exactly the same as a potential input value. Pad the placeholder value with trailing spaces to avoid this issue.</p>
+	  <form action="http://scripty.walterdavisstudio.com/reflector.php" method="get" accept-charset="utf-8">
+	   <p><input name="name" id="name" value="" placeholder="Name"/></p>
+	   <p><input name="email" id="email" value="" placeholder="E-mail address"/></p>
+	   <p><input type="submit" value="Send"/></p>
+	  </form>
+	</div>
+</body>
+</html>
