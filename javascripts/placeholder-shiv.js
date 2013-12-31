@@ -9,18 +9,18 @@ document.observe('dom:loaded', function(){
         elm.setStyle('color:gray').setValue(hint);
         if(elm.readAttribute('type') == 'password'){
           elm['real_type'] = 'password';
-          elm.type = 'text';
+          elm.writeAttribute('type', 'text');
         }
         elm.observe('focus',function(evt){
           if($F(this) == hint){
             this.clear().setStyle({color: originalColor});
-            if(this.real_type) this.type = this.real_type;
+            if(this.real_type) this.writeAttribute('type', this.real_type);
           }
         });
         elm.observe('blur', function(evt){
           if($F(this) == ''){
             this.setValue(hint).setStyle('color:gray');
-            if(this.real_type) this.type = 'text';
+            if(this.real_type) this.writeAttribute('type', 'text');
           }
         });
       }
