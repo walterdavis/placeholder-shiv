@@ -9,7 +9,7 @@ $(document).ready(function() {
       //First check to make sure the value is nothing
       if ( $self.val() === '' ) {
         $self.val($self.attr('placeholder'));
-        if($self.type == 'password'){
+        if($self.attr('type') == 'password'){
           $self['real_type'] = 'password';
           $self.type = 'text';
         }

@@ -7,7 +7,7 @@ document.observe('dom:loaded', function(){
         var originalColor = elm.getStyle('color');
         var hint = elm.readAttribute('placeholder');
         elm.setStyle('color:gray').setValue(hint);
-        if(elm.type == 'password'){
+        if(elm.readAttribute('type') == 'password'){
           elm['real_type'] = 'password';
           elm.type = 'text';
         }
