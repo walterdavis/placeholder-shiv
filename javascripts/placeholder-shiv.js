@@ -9,7 +9,7 @@ document.observe('dom:loaded', function(){
         elm.setStyle('color:gray').setValue(hint);
         if(elm.type == 'password'){
           elm['real_type'] = 'password';
-          elm.type = text;
+          elm.type = 'text';
         }
         elm.observe('focus',function(evt){
           if($F(this) == hint){
@@ -20,7 +20,7 @@ document.observe('dom:loaded', function(){
         elm.observe('blur', function(evt){
           if($F(this) == ''){
             this.setValue(hint).setStyle('color:gray');
-            if(this.real_type) this.type = text;
+            if(this.real_type) this.type = 'text';
           }
         });
       }
