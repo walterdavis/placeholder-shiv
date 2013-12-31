@@ -7,14 +7,20 @@ document.observe('dom:loaded', function(){
         var originalColor = elm.getStyle('color');
         var hint = elm.readAttribute('placeholder');
         elm.setStyle('color:gray').setValue(hint);
+        if(elm.type == 'password'){
+          elm['real_type'] = password;
+          elm.type = text;
+        }
         elm.observe('focus',function(evt){
           if($F(this) == hint){
             this.clear().setStyle({color: originalColor});
+            if(this.real_type) this.type = this.real_type
           }
         });
         elm.observe('blur', function(evt){
           if($F(this) == ''){
             this.setValue(hint).setStyle('color:gray');
+            if(this.real_type) this.type = text;
           }
         });
       }

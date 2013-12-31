@@ -9,6 +9,10 @@ $(document).ready(function() {
       //First check to make sure the value is nothing
       if ( $self.val() === '' ) {
         $self.val($self.attr('placeholder'));
+        if($self.type == 'password'){
+          $self['real_type'] = 'password';
+          $self.type = 'text';
+        }
       }
     });
 
@@ -18,6 +22,7 @@ $(document).ready(function() {
         if (input.val() === input.attr('placeholder')) {
           input.val('');
           input.removeClass('placeholder');
+          if(input.real_type) input.type = input.real_type;
         }
       },
       blur: function() {
@@ -25,6 +30,7 @@ $(document).ready(function() {
         if (input.val() === '' || input.val() === input.attr('placeholder')) {
           input.addClass('placeholder');
           input.val(input.attr('placeholder'));
+          if(input.real_type) input.type = 'text';
         }
       }
     },"input[placeholder]");
