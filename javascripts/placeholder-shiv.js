@@ -14,7 +14,7 @@ document.observe('dom:loaded', function(){
         elm.observe('focus',function(evt){
           if($F(this) == hint){
             this.clear().setStyle({color: originalColor});
-            if(this.real_type) this.type = this.real_type
+            if(this.real_type) this.type = this.real_type;
           }
         });
         elm.observe('blur', function(evt){
